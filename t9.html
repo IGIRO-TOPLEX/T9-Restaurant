@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T9 Restaurant - Ntinda, Kampala</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        html { scroll-behavior: smooth; }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0') center/cover;
+        }
+    </style>
+</head>
+<body class="font-['Poppins'] bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-red-600">T9</div>
+            <div class="space-x-6 hidden md:block">
+                <a href="#home" class="nav-link hover:text-red-600 transition">Home</a>
+                <a href="#menu" class="nav-link hover:text-red-600 transition">Menu</a>
+                <a href="#about" class="nav-link hover:text-red-600 transition">About</a>
+                <a href="#contact" class="nav-link hover:text-red-600 transition">Contact</a>
+            </div>
+            <button class="md:hidden menu-toggle">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Home/Hero Section -->
+    <section id="home" class="hero-bg text-white min-h-screen flex items-center">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">Welcome to T9 Restaurant</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Discover a culinary journey blending continental and local cuisines in the heart of Ntinda</p>
+            <div class="space-x-4">
+                <a href="#menu" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-full transition">View Menu</a>
+                <a href="#reservation" class="border border-white hover:bg-white hover:text-black px-6 py-3 rounded-full transition">Book a Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl text-center mb-8 font-bold">Our Menu</h2>
+            <div class="mb-8 flex justify-center">
+                <input type="text" id="menu-search" placeholder="Search dishes..." 
+                    class="px-4 py-2 border rounded-full w-full max-w-md">
+            </div>
+            <div id="menu-items" class="grid md:grid-cols-3 gap-6">
+                <!-- Menu items will be dynamically populated via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl text-center mb-8 font-bold">What Our Customers Say</h2>
+            <div id="testimonial-slider" class="max-w-2xl mx-auto text-center">
+                <!-- Testimonials will be dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl text-center mb-8 font-bold">Reserve a Table</h2>
+            <form class="max-w-lg mx-auto bg-gray-50 p-8 rounded-lg shadow-md">
+                <input type="text" placeholder="Name" required 
+                    class="w-full mb-4 px-4 py-2 border rounded">
+                <input type="email" placeholder="Email" required 
+                    class="w-full mb-4 px-4 py-2 border rounded">
+                <input type="date" required 
+                    class="w-full mb-4 px-4 py-2 border rounded">
+                <select class="w-full mb-4 px-4 py-2 border rounded">
+                    <option>Select Number of Guests</option>
+                    <option>1-2</option>
+                    <option>3-4</option>
+                    <option>5-6</option>
+                </select>
+                <button type="submit" 
+                    class="w-full bg-red-600 text-white py-3 rounded-full hover:bg-red-700 transition">
+                    Book Now
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl text-center mb-8 font-bold">Contact Us</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl mb-4">Location</h3>
+                    <p>Ntinda, Traffic Lights</p>
+                    <p>Kampala, Uganda</p>
+                    <p class="mt-4">Phone: +256 123 456 789</p>
+                    <p>Email: info@t9restaurant.com</p>
+                    <div class="mt-6 flex space-x-4">
+                        <a href="#" class="text-red-600 hover:text-red-800">Facebook</a>
+                        <a href="#" class="text-red-600 hover:text-red-800">Instagram</a>
+                        <a href="#" class="text-red-600 hover:text-red-800">Twitter</a>
+                    </div>
+                </div>
+                <div>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7546298366!2d32.611214!3d0.3421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMCfyMCczMC42IkEgMzLCsDM2JzQILjQiRQ!5e0!3m2!1sen!2sug!4v1702737382243!5m2!1sen!2sug" 
+                        class="w-full h-64 rounded-lg" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-red-600 text-white p-3 rounded-full shadow-lg hidden">
+        ↑
+    </button>
+
+    <script>
+        // Menu Data
+        const menuItems = [
+            { name: "Beef Luwombo", category: "Local", price: 25000, image: "luwombo.jpg" },
+            { name: "Chicken Curry", category: "Continental", price: 22000, image: "curry.jpg" },
+            { name: "Fresh Passion Juice", category: "Juices", price: 5000, image: "passion.jpg" },
+            // Add more menu items
+        ];
+
+        // Populate Menu
+        const menuContainer = document.getElementById('menu-items');
+        menuItems.forEach(item => {
+            const menuItemEl = document.createElement('div');
+            menuItemEl.className = 'bg-white p-4 rounded-lg shadow-md';
+            menuItemEl.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold">${item.name}</h3>
+                <p class="text-gray-600">${item.category}</p>
+                <p class="text-red-600 font-bold">UGX ${item.price}</p>
+            `;
+            menuContainer.appendChild(menuItemEl);
+        });
+
+        // Testimonials
+        const testimonials = [
+            { text: "Amazing local and continental cuisine!", author: "Jane Doe" },
+            { text: "Best restaurant in Ntinda!", author: "John Smith" }
+        ];
+
+        const testimonialSlider = document.getElementById('testimonial-slider');
+        let currentTestimonial = 0;
+
+        function rotateTestimonials() {
+            testimonialSlider.innerHTML = `
+                <blockquote class="text-xl italic">"${testimonials[currentTestimonial].text}"</blockquote>
+                <p class="mt-4 font-bold">- ${testimonials[currentTestimonial].author}</p>
+            `;
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        }
+        rotateTestimonials();
+        setInterval(rotateTestimonials, 5000);
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTopButton.classList.toggle('hidden', window.scrollY < 300);
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Menu Search
+        const menuSearch = document.getElementById('menu-search');
+        menuSearch.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const menuCards = document.querySelectorAll('#menu-items > div');
+            menuCards.forEach(card => {
+                const itemName = card.querySelector('h3').textContent.toLowerCase();
+                card.style.display = itemName.includes(searchTerm) ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
